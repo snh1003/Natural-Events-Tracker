@@ -10,13 +10,9 @@ interface mainWrapperProps {
 const StyleForm = styled.section<Pick<mainWrapperProps, "width" | "height">>`
   display: flex;
   flex-direction: column;
-  width: 1000px;
-  height: 1000px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: groove 2px;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  background: ${props => props.theme.main.background};
 `;
 
 const MainWrapper: React.FC<mainWrapperProps> = ({
